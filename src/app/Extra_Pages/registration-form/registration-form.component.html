@@ -1,0 +1,77 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <div class="container shadow-sm p-3 mb-5 bg-white rounded mt-5  p-2">
+
+        <div class="mb-2 "><img src="../../../assets/img/photos/clg.jpg" alt="" class="img-fluid"></div>
+        <h1 class="mb-3 text-center font-weight-bold">Student Registration</h1>
+        <form class="p-4 bg-white" [formGroup]="form_data">
+          <div class="mb-3">
+            <label class="form-label">Class</label>
+            <input type="text" class="form-control" formControlName="Class" />
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Div</label>
+            <input type="text" class="form-control" formControlName="Div" />
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Batch</label>
+            <input type="text" class="form-control" formControlName="Batch" />
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Group No.</label>
+            <input type="text" class="form-control" formControlName="Group_No" />
+          </div>
+
+          <div *ngFor="let stu_data of data,let i = index">
+            <label>Student {{i + 1}}</label>
+            <div class="mb-3">
+              <label class="form-label">Enrollment No.</label>
+              <!-- <input type="text" class="form-control" [(ngModel)]="stu_data[i].enrollment_no" /> -->
+              <input type="text" class="form-control"/>
+            </div>
+            <div class="mb-3">
+              <label for="inputAddress2" class="form-label">Roll No</label>
+              <input type="text" class="form-control">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Name</label>
+              <input type="text" class="form-control" />
+            </div>
+          </div>
+          <div class="text-end">
+            <button type="button" class="btn btn-primary btn-sm" (click)="Add(1)"><i class="fa fa-plus" aria-hidden="true"></i></button>
+          </div>
+
+          <!-- <div class="mb-3">
+            <label class="form-label">Mobile No</label>
+            <input type="text" class="form-control" formControlName="mobileno">
+          </div>
+          <div class="mb-3">
+            <label for="inputAddress2" class="form-label">Email</label>
+            <input type="email" class="form-control" formControlName="email">
+          </div> -->
+          <div class="mb-3">
+            <label class="form-label">Username</label>
+            <input type="text" class="form-control" formControlName="username" />
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Password</label>
+            <input type="text" class="form-control" formControlName="password" />
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Security Question</label>
+            <select class="form-select" formControlName="security_question">
+              <option selected>Choose...</option>
+            </select>
+            <input type="text" class="form-control mt-2" formControlName="security_question_ans" />
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="reset" class="clear-btn">Clear Form</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</div>
